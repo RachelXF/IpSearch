@@ -18,8 +18,7 @@
 #include <vector>
 #include <fstream>
 #include <cassert>
-#define TICK   NSDate *startTime = [NSDate date]
-#define TOCK   NSLog(@"Time: %f", -[startTime timeIntervalSinceNow])
+
 using namespace std;
 
 //定义三个全局变量
@@ -148,13 +147,11 @@ string Query(string ip){
     return addrArr[cur].first + " " + addrArr[cur].second;
 }
 
-int main(int argc, const char * argv[]) {
-    //TICK;
+int main(int argc, const char * argv[]) {  
     //加载文件
-    LoadData("/Users/rachelwu/Documents/workspace/IpSearch/IpSearch/IP_DATA.txt");
-    //LoadData("/Users/rachelwu/Documents/workspace/IpSearch/IpSearch/test.txt");
+    LoadData("IP_DATA.txt");
     string res = Query("196.2.1.3");
     cout<<res<<endl;
-    //TOCK;
+    
     return 0;
 }
