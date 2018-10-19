@@ -171,7 +171,7 @@ void test4(){
 void test5(){
     string ipStr = "196.2.1";
     string res = Query(ipStr);
-    cout<<ipStr<<" : "<<res<<endl;
+    cout<<ipStr<<" "<<res<<endl;
 }
 int main(int argc, const char * argv[]) {  
     //加载文件
