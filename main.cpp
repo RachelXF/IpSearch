@@ -134,7 +134,7 @@ string Query(string ip){
     long ipVal = IpToLong(ip,firstIp);
     //若ipVal为-1，代表输入ip地址无效，直接返回空串
     if(ipVal==-1){
-        cout<<"The ip address is invalid!"<<endl;
+        cout<<"The ip address is invalid!"<<" ";
         return "";
     }
     
@@ -147,11 +147,40 @@ string Query(string ip){
     return addrArr[cur].first + " " + addrArr[cur].second;
 }
 
+//测试代码
+void test1(){
+    string ipStr = "196.2.1.3";
+    string res = Query(ipStr);
+    cout<<ipStr<<" "<<res<<endl;
+}
+void test2(){
+    string ipStr = "0.0.0.0";
+    string res = Query(ipStr);
+    cout<<ipStr<<" "<<res<<endl;
+}
+void test3(){
+    string ipStr = "255.255.255.255";
+    string res = Query(ipStr);
+    cout<<ipStr<<" "<<res<<endl;
+}
+void test4(){
+    string ipStr = "-1.2.1.3";
+    string res = Query(ipStr);
+    cout<<ipStr<<" "<<res<<endl;
+}
+void test5(){
+    string ipStr = "196.2.1";
+    string res = Query(ipStr);
+    cout<<ipStr<<" : "<<res<<endl;
+}
 int main(int argc, const char * argv[]) {  
     //加载文件
     LoadData("IP_DATA.txt");
-    string res = Query("196.2.1.3");
-    cout<<res<<endl;
     
+    test1();
+    test2();
+    test3();
+    test4();
+    test5();
     return 0;
 }
